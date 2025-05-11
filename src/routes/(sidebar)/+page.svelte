@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Dashboard from '../utils/dashboard/Dashboard.svelte';
+  import StackedDashboard from '../utils/dashboard/StackedDashboard.svelte';
   import MetaTag from '../utils/MetaTag.svelte';
   import type { PageProps } from './$types';
 
@@ -15,5 +15,5 @@
 <MetaTag {path} {description} {title} {subtitle} />
 <main class="p-4">
   <h1 class="hidden">Dashboard</h1>
-  <Dashboard />
+  <StackedDashboard title="Flowbite Dashboard Overview" showBreadcrumb={false} />
 </main>

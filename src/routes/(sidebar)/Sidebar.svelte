@@ -56,12 +56,10 @@
   });
 
   let posts = [
-    { name: 'Dashboard', Icon: ChartPieOutline, href: '/dashboard' },
-    {
+    { name: 'Dashboard', Icon: ChartPieOutline, href: '/dashboard' },    {
       name: 'Layouts',
       Icon: TableColumnSolid,
       children: {
-        Stacked: '/layouts/stacked',
         Sidebar: '/layouts/sidebar'
       }
     },
@@ -94,12 +92,10 @@
         'Reset password': '/authentication/reset-password',
         'Profile lock': '/authentication/profile-lock'
       }
-    },
-    {
+    },    {
       name: 'Playground',
       Icon: WandMagicSparklesOutline,
       children: {
-        Stacked: '/playground/stacked',
         Sidebar: '/playground/sidebar'
       }
     }

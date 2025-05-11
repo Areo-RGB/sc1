@@ -15,11 +15,6 @@ test('Pricing page has expected h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Our pricing plan made simple');
 });
 
-test('Layouts: Stacked page has expected h1', async ({ page }) => {
-  await page.goto('/layouts/stacked');
-  expect(await page.textContent('h1')).toBe('Layouts: Stacked');
-});
-
 test('Layouts: Sidebar page has expected h1', async ({ page }) => {
   await page.goto('/layouts/sidebar');
   expect(await page.textContent('h1')).toBe('Layouts: Sidebar');
@@ -78,11 +73,6 @@ test('reset-password page has expected h1', async ({ page }) => {
 test('profile-lock page has expected h1', async ({ page }) => {
   await page.goto('/authentication/profile-lock');
   expect(await page.textContent('h1')).toBe('Neil Sims');
-});
-
-test('playground/stacked page has expected h1', async ({ page }) => {
-  await page.goto('/playground/stacked');
-  expect(await page.textContent('h1')).toBe('Create something awesome here');
 });
 
 test('playground/sidebar page has expected h1', async ({ page }) => {

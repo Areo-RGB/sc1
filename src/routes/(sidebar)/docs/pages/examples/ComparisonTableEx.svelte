@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ComparisonTable } from '$lib';
-  import { rows } from '../../../../(no-layout)/pages/pricing/data';
+  import { rows } from '../../../../data/pricing';
 </script>
 
 <ComparisonTable {rows} />

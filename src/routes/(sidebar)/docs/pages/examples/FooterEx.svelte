@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Footer } from '$lib';
   import { P } from 'flowbite-svelte';
-  import { menus, brand } from '../../../../(no-layout)/pages/pricing/data';
+  import { menus, brand } from '../../../../data/pricing';
 </script>
 
 <Footer {menus} {brand}>
