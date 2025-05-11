@@ -5,7 +5,8 @@
   import { Runatics } from 'runatics';
 
   let { children, data }: LayoutProps = $props();
-  const analyticsId = data.ANALYTICS_ID as string;
+  // Analytics ID is now optional
+  const analyticsId = data.ANALYTICS_ID ?? '';
   // console.log('analyticsId', data.ANALYTICS_ID);
 
   onMount(modeobserver);
