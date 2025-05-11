@@ -4,10 +4,10 @@
   import MetaTag from '../utils/MetaTag.svelte';
   let title = 'Sign in to platform';
   let site = {
-    name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    name: 'QuoVadis',
+    img: 'https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png',
     link: '/',
-    imgAlt: 'FlowBite Logo'
+    imgAlt: 'QuoVadis Logo'
   };
   let rememberMe = true;
   let lostPassword = true;
@@ -29,8 +29,7 @@
   };
 
   const path: string = '/authentication/sign-in';
-  const description: string = 'Sign in example - Flowbite Svelte Admin Dashboard';
-  const metaTitle: string = 'Flowbite Svelte Admin Dashboard - Sign in';
+  const description: string = 'Sign in example - QuoVadis Svelte Admin Dashboard';  const metaTitle: string = 'QuoVadis Svelte Admin Dashboard - Sign in';
   const subtitle: string = 'Sign in';
 </script>
 

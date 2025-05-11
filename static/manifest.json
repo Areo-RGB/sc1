@@ -1,0 +1,21 @@
+{
+  "name": "QuoVadis Admin Dashboard",
+  "short_name": "QuoVadis",
+  "description": "QuoVadis Svelte Admin Dashboard - A powerful admin dashboard solution",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

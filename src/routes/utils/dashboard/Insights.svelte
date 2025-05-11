@@ -27,7 +27,7 @@
           </div>
           <h3 class="mb-4 text-2xl font-medium text-gray-900 dark:text-white">You are going to grow by 44% next year</h3>
           <p class="mb-4 text-gray-500 dark:text-gray-300">
-            Get started with a free and open-source admin dashboard layout built with Tailwind CSS and Flowbite featuring charts, widgets, CRUD layouts, authentication pages, and more
+            Get started with a free and open-source admin dashboard layout built with Tailwind CSS and QuoVadis featuring charts, widgets, CRUD layouts, authentication pages, and more
           </p>
           <p class="mb-2 text-lg font-medium text-gray-900 dark:text-white">Key Takeaways:</p>
           <ul class="mb-4 list-disc space-y-3 pl-4 text-gray-500 dark:text-gray-300">
@@ -78,7 +78,7 @@
           <div class="mb-4 flex items-center text-lg font-medium text-purple-600">
             <FireSolid class="me-2" />Features
           </div>
-          <h3 class="mb-4 text-2xl font-medium text-gray-900 dark:text-white">Go next level with Flowbite</h3>
+          <h3 class="mb-4 text-2xl font-medium text-gray-900 dark:text-white">Go next level with QuoVadis</h3>
           <p class="text-gray-500 dark:text-gray-300">
             Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease.
           </p>

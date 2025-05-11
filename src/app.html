@@ -2,8 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <link rel="icon" href="https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="description" content="QuoVadis Svelte Admin Dashboard - A powerful admin dashboard solution" />
+    <link rel="manifest" href="%sveltekit.assets%/manifest.json" />
+    <link rel="apple-touch-icon" href="https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png" />
+    <script>
+      // Check for theme preference in localStorage
+      let theme = localStorage.getItem('theme');
+      
+      // If no theme preference stored, default to light theme (no 'dark' class)
+      if (!theme || theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+      
+      // Register service worker for PWA functionality
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
     %sveltekit.head%
   </head>
   <body data-sveltekit-preload-data="hover" class="bg-gray-50 antialiased dark:bg-gray-900">

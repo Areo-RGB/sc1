@@ -7,8 +7,7 @@
   // $inspect('data in dashboard/+page', data)
 
   const path: string = '/dashboard';
-  const description: string = 'Admin Dashboard example using Flowbite Svelte';
-  const title: string = 'Flowbite Svelte Admin Dashboard - Dashboard';
+  const description: string = 'Admin Dashboard example using QuoVadis Svelte';  const title: string = 'QuoVadis Svelte Admin Dashboard - Dashboard';
   const subtitle: string = 'Admin Dashboard';
 </script>
 

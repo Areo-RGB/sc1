@@ -95,8 +95,7 @@
     { name: 'GMT+10 Eastern Australia Standard Time (AEST)', value: '6' }
   ];
   const path: string = '/settings';
-  const description: string = 'Settings examaple - Flowbite Svelte Admin Dashboard';
-  const title: string = 'Flowbite Svelte Admin Dashboard - Settings';
+  const description: string = 'Settings examaple - QuoVadis Svelte Admin Dashboard';  const title: string = 'QuoVadis Svelte Admin Dashboard - Settings';
   const subtitle: string = 'Settings';
   // seeMorehref,sessions
   const sessionOptions: SessionProps = {

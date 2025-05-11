@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { AppsMenu, UserMenu, NotificationList } from '$lib';
-  import { DarkMode, Dropdown, DropdownItem, NavBrand, NavLi, NavUl, Navbar, Search, DropdownDivider } from 'flowbite-svelte';
+  import { AppsMenu, UserMenu, NotificationList, ThemeToggle } from '$lib';
+  import { Dropdown, DropdownItem, NavBrand, NavLi, NavUl, Navbar, Search, DropdownDivider } from 'flowbite-svelte';
   import {
     ArchiveSolid,
     ArrowRightToBracketOutline,
@@ -80,8 +80,8 @@
 
 <Navbar class="mx-10 sm:mx-0">
   <NavBrand href="/" class="mx-10">
-    <img src="/images/flowbite-svelte-icon-logo.svg" class="me-2.5 h-6 sm:h-8" alt="Flowbite Logo" />
-    <span class="ml-px self-center text-xl font-semibold whitespace-nowrap sm:text-2xl dark:text-white"> Flowbite </span>
+    <img src="https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png" class="me-2.5 h-6 sm:h-8" alt="QuoVadis Logo" />
+    <span class="ml-px self-center text-xl font-semibold whitespace-nowrap sm:text-2xl dark:text-white"> QuoVadis </span>
   </NavBrand>
   <div class="hidden lg:block lg:ps-3">
     {#if list}      <NavUl class="ml-2" activeUrl="/" activeClass="text-primary-600 dark:text-primary-500">
@@ -97,7 +97,7 @@
   <div class="ms-auto flex items-center text-gray-500 sm:order-2 dark:text-gray-300">
     <NotificationList {notifications}/>
     <AppsMenu {menu} />
-    <DarkMode />
+    <ThemeToggle />
     <UserMenu {...Users[4]} {menuItems}>
       <DropdownDivider />
       <DropdownItem>Sign out</DropdownItem>

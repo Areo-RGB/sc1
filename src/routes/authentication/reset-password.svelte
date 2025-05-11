@@ -4,10 +4,10 @@
   import MetaTag from '../utils/MetaTag.svelte';
   const title = 'Reset your password';
   const site = {
-    name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    name: 'QuoVadis',
+    img: 'https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png',
     link: '/',
-    imgAlt: 'FlowBite Logo'
+    imgAlt: 'QuoVadis Logo'
   };
   const acceptTerms = true;
   const btnTitle = 'Create account';
@@ -26,8 +26,7 @@
   };
 
   const path: string = '/authentication/reset-password';
-  const description: string = 'Reset password example - Flowbite Svelte Admin Dashboard';
-  const metaTitle: string = 'Flowbite Svelte Admin Dashboard - Reset password';
+  const description: string = 'Reset password example - QuoVadis Svelte Admin Dashboard';  const metaTitle: string = 'QuoVadis Svelte Admin Dashboard - Reset password';
   const subtitle: string = 'Reset password';
 </script>
 

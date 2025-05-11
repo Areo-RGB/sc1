@@ -5,10 +5,10 @@
 
   const title = 'Create a Free Account';
   const site = {
-    name: 'Flowbite',
-    img: '/images/flowbite-svelte-icon-logo.svg',
+    name: 'QuoVadis',
+    img: 'https://data3.fra1.cdn.digitaloceanspaces.com/Bilder/lo.png',
     link: '/',
-    imgAlt: 'FlowBite Logo'
+    imgAlt: 'QuoVadis Logo'
   };
   const acceptTerms = true;
   const haveAccount = true;
@@ -28,8 +28,7 @@
   };
 
   const path: string = '/authentication/sign-up';
-  const description: string = 'Sign up example - Flowbite Svelte Admin Dashboard';
-  const metaTitle: string = 'Flowbite Svelte Admin Dashboard - Sign up';
+  const description: string = 'Sign up example - QuoVadis Svelte Admin Dashboard';  const metaTitle: string = 'QuoVadis Svelte Admin Dashboard - Sign up';
   const subtitle: string = 'Sign up';
 </script>
 

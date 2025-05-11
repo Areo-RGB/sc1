@@ -9,9 +9,7 @@
   }
   let { path, description, title, subtitle }: Props = $props();
 
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/flowbite-svelte-admin-dashboard?title=${subtitle}`;
-
-  let og_url: string = `https://flowbite-svelte-admin-dashboard.vercel.app${path}`;
+  let imgsrc = `https://open-graph-vercel.vercel.app/api/quovadis-svelte-admin-dashboard?title=${subtitle}`;  let og_url: string = `https://quovadis-svelte-admin-dashboard.vercel.app${path}`;
 </script>
 
 <RunesMetaTags
@@ -26,7 +24,7 @@
     imageWidth: 1200,
     imageHeight: 630,
     imageAlt: `${title}`,
-    siteName: 'Flowbite Svelte Admin Dashboard'
+    siteName: 'QuoVadis Svelte Admin Dashboard'
   }}
   twitter={{
     creator: '@shinokada',
