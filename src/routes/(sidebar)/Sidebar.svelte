@@ -6,20 +6,7 @@
   import {
     AngleDownOutline,
     AngleUpOutline,
-    ClipboardListSolid,
-    CogOutline,
-    FileChartBarSolid,
-    GithubSolid,
-    LayersSolid,
-    LifeSaverSolid,
-    LockSolid,
-    WandMagicSparklesOutline,
-    ChartPieOutline,
-    RectangleListSolid,
-    TableColumnSolid,
-    GridSolid,
-    FireOutline,
-    BookOpenOutline
+    ChartPieOutline
   } from 'flowbite-svelte-icons';
 
   interface Props {
@@ -53,88 +40,18 @@
     closeDrawer();
 
     activeMainSidebar = navigation.to?.url.pathname ?? '';
-  });
-
-  let posts = [
-    { name: 'Dashboard', Icon: ChartPieOutline, href: '/dashboard' },
-    {
-      name: 'Layouts',
-      Icon: TableColumnSolid,
-      children: {
-        Stacked: '/layouts/stacked',
-        Sidebar: '/layouts/sidebar'
-      }
-    },
-    {
-      name: 'CRUD',
-      Icon: RectangleListSolid,
-      children: {
-        Products: '/crud/products',
-        Users: '/crud/users'
-      }
-    },
-    { name: 'Settings', Icon: CogOutline, href: '/settings' },
-    {
-      name: 'Pages',
-      Icon: FileChartBarSolid,
-      children: {
-        Pricing: '/pages/pricing',
-        Maintenance: '/errors/400',
-        '404 not found': '/errors/404',
-        '500 server error': '/errors/500'
-      }
-    },
-    {
-      name: 'Authentication',
-      Icon: LockSolid,
-      children: {
-        'Sign in': '/authentication/sign-in',
-        'Sign up': '/authentication/sign-up',
-        'Forgot password': '/authentication/forgot-password',
-        'Reset password': '/authentication/reset-password',
-        'Profile lock': '/authentication/profile-lock'
-      }
-    },
-    {
-      name: 'Playground',
-      Icon: WandMagicSparklesOutline,
-      children: {
-        Stacked: '/playground/stacked',
-        Sidebar: '/playground/sidebar'
-      }
-    }
+  });  let posts = [
+    { name: 'Dashboard', Icon: ChartPieOutline, href: '/dashboard' }
   ];
-
-  let links = [
-    {
-      label: 'GitHub Repository',
-      href: 'https://github.com/themesberg/flowbite-svelte-admin-dashboard',
-      Icon: GithubSolid
-    },
-    {
-      label: 'Flowbite Svelte',
-      href: 'https://flowbite-svelte.com/docs/pages/quickstart',
-      Icon: ClipboardListSolid
-    },
-    {
-      label: 'Components',
-      href: 'https://flowbite-svelte.com/docs/components/accordion',
-      Icon: LayersSolid
-    },
-    {
-      label: 'Support',
-      href: 'https://github.com/themesberg/flowbite-svelte-admin-dashboard/issues',
-      Icon: LifeSaverSolid
-    }
-  ];
+  
+  // No external links needed anymore
   let dropdowns = Object.fromEntries(Object.keys(posts).map((x) => [x, false]));
 </script>
 
 <SidebarButton breakpoint="lg" onclick={sidebarUi.toggle} class="fixed top-[22px] z-40 mb-2" />
 <Sidebar breakpoint="lg" backdrop={false} {isOpen} {closeSidebar} params={{ x: -50, duration: 50 }} class="top-0 left-0 w-64 h-screen transition-transform bg-gray-50 dark:bg-gray-800 lg:block mt-[69px]" divClass="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800" activeClass="p-2" nonActiveClass="p-2">
   <h4 class="sr-only">Main menu</h4>
-  <SidebarWrapper divClass="overflow-y-auto px-3 pt-20 lg:pt-5 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] lg:block dark:bg-gray-800 lg:me-0 lg:sticky top-2">
-    <SidebarGroup class={groupClass}>
+  <SidebarWrapper divClass="overflow-y-auto px-3 pt-20 lg:pt-5 h-full bg-white scrolling-touch max-w-2xs lg:h-[calc(100vh-4rem)] lg:block dark:bg-gray-800 lg:me-0 lg:sticky top-2">    <SidebarGroup class={groupClass}>
       {#each posts as { name, Icon, children, href } (name)}
         {#if children}
           <SidebarDropdownWrapper label={name} class="pr-3">
@@ -158,41 +75,6 @@
             {/snippet}
           </SidebarItem>
         {/if}
-      {/each}
-    </SidebarGroup>
-    <SidebarGroup class={groupClass}>
-      <SidebarDropdownWrapper label="Docs" class="pr-3">
-        {#snippet arrowdown()}
-          <AngleDownOutline strokeWidth="3.3" size="sm" />
-        {/snippet}
-        {#snippet arrowup()}
-          <AngleUpOutline strokeWidth="3.3" size="sm" />
-        {/snippet}
-        {#snippet icon()}
-          <BookOpenOutline class={iconClass} />
-        {/snippet}
-        {#each docsRoute as doc}
-          <SidebarItem label={doc} href={`/docs/${doc}`} spanClass="ml-3" class={itemClass}>
-            {#snippet icon()}
-              <FireOutline class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white" />
-            {/snippet}
-          </SidebarItem>
-        {/each}
-      </SidebarDropdownWrapper>
-      <SidebarItem label="About" spanClass="flex-1 ms-3 whitespace-nowrap" href="/about">
-        {#snippet icon()}
-          <GridSolid class="h-5 w-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white" />
-        {/snippet}
-      </SidebarItem>
-    </SidebarGroup>
-
-    <SidebarGroup class={groupClass}>
-      {#each links as { label, href, Icon } (label)}
-        <SidebarItem {label} {href} spanClass="ml-3" class={itemClass} target="_blank">
-          {#snippet icon()}
-            <Icon class={iconClass} />
-          {/snippet}
-        </SidebarItem>
       {/each}
     </SidebarGroup>
   </SidebarWrapper>
