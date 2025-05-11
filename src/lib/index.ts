@@ -6,7 +6,6 @@ export { default as CardWidget } from './CardWidget.svelte';
 export { default as CategorySalesReport } from './CategorySalesReport.svelte';
 export { default as Change } from './Change.svelte';
 export { default as ChartWidget } from './ChartWidget.svelte';
-export { default as ChatMsg } from './ChatMsg.svelte';
 export { default as ComparisonTable } from './ComparisonTable.svelte';
 export { default as CreditCard } from './CreditCard.svelte';
 export { default as DarkChart } from './DarkChart.svelte';

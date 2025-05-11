@@ -32,15 +32,6 @@ export interface ChartWidgetProps {
   headingClass?: string;
 }
 
-export interface ChatMsgProps {
-  children: Snippet;
-  avatar?: string;
-  name?: string;
-  timestamp?: Date;
-  replays?: number;
-  class?: string;
-}
-
 export interface IconAvatarProps {
   children: Snippet;
   src: string;
@@ -404,7 +395,7 @@ export interface CategorySalesReportProps {
 
 export interface ComparisonTableProps {
   columns?: string[];
-  rows?: { name: string; [key: string]: string | boolean }[];
+  rows?: { name: string;[key: string]: string | boolean }[];
 }
 
 export type TableRow = {
@@ -552,7 +543,7 @@ export type UserAccount = {
   country: string;
   status: string;
 }
-export interface AccountsProps{
+export interface AccountsProps {
   children?: Snippet;
   users: UserAccount[];
   title?: string;

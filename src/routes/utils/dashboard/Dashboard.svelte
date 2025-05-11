@@ -2,13 +2,10 @@
   import thickbars from '../graphs/thickbars';
   import options from '../graphs/thinmultibars';
   import trafficOptions from '../graphs/traffic';
-  import users from '../graphs/users';
-  import { DesktopPcOutline, MobilePhoneOutline, TabletOutline, ArrowRightOutline } from 'flowbite-svelte-icons';
-  import { Chart, P, Button, Timeline, TimelineItem } from 'flowbite-svelte';
-  import { ChartWidget, Stats, More, ActivityList, ProductMetricCard, CategorySalesReport, DarkChart, Traffic, getChartOptions } from '$lib';
+  import users from '../graphs/users';  import { DesktopPcOutline, MobilePhoneOutline, TabletOutline } from 'flowbite-svelte-icons';
+  import { Chart, P } from 'flowbite-svelte';
+  import { ChartWidget, Stats, More, ProductMetricCard, CategorySalesReport, DarkChart, Traffic, getChartOptions } from '$lib';
   import type { DeviceOption } from '$lib/types';
-  import Chat from './Chat.svelte';
-  import Insights from './Insights.svelte';
   import Transactions from './Transactions.svelte';
   import Customers from '../../data/users.json';
 
@@ -107,22 +104,25 @@
 </script>
 
 <div class="mt-px space-y-4">
-  <div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-    <ChartWidget value={12.5} {chartOptions} title="$45,385" subtitle="Sales this week" />
-    <Stats {products} {customers} {...statsCont}>
-      {#snippet popoverDesc()}
-        <P>Statistics is a branch of applied mathematics that involves the collection, description, analysis, and inference of conclusions from quantitative data.</P>
-        <More title="Read more" href="#top" flat />
-      {/snippet}
-    </Stats>
-  </div>
-  <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-    <ProductMetricCard title="New products" subTitle="2,340" changeProps={{ size: 'sm', value: 12.5, since: 'Since last month' }}>
-      {#snippet chart()}
-        <Chart options={thickbars} class="w-full" />
-      {/snippet}
-    </ProductMetricCard>
+  <!-- Sales this week chart -->
+  <ChartWidget value={12.5} {chartOptions} title="$45,385" subtitle="Sales this week" />
+  
+  <!-- Statistics card -->
+  <Stats {products} {customers} {...statsCont}>
+    {#snippet popoverDesc()}
+      <P>Statistics is a branch of applied mathematics that involves the collection, description, analysis, and inference of conclusions from quantitative data.</P>
+      <More title="Read more" href="#top" flat />
+    {/snippet}
+  </Stats>
+  
+  <!-- Product metrics cards -->
+  <ProductMetricCard title="New products" subTitle="2,340" changeProps={{ size: 'sm', value: 12.5, since: 'Since last month' }}>
+    {#snippet chart()}
+      <Chart options={thickbars} class="w-full" />
+    {/snippet}
+  </ProductMetricCard>
 
+<<<<<<< HEAD
     <ProductMetricCard title="Users" subTitle="4,420" changeProps={{ size: 'sm', value: -3.4, since: 'Since last month' }}>
       {#snippet chart()}
         <DarkChart configFunc={users} class="w-full" />
@@ -186,6 +186,49 @@
     </ActivityList>
     <Insights />
   </div>
+=======
+  <ProductMetricCard title="Users" subTitle="4,420" changeProps={{ size: 'sm', value: -3.4, since: 'Since last month' }}>
+    {#snippet chart()}
+      <DarkChart configFunc={users} class="w-full" />
+    {/snippet}
+  </ProductMetricCard>
+>>>>>>> 4c5435c8fd876c365cb68f01df09a3e653e24a1a
 
+  <ProductMetricCard title="Users" subTitle="4,420" changeProps={{ size: 'sm', value: -3.4, since: 'Since last month' }}>
+    {#snippet chart()}
+      <DarkChart
+        configFunc={(d) => {
+          const x = users(d);
+          if (x.plotOptions?.bar) {
+            x.plotOptions.bar.horizontal = true;
+          } else {
+            x.plotOptions = {
+              bar: {
+                horizontal: true
+              }
+            };
+          }
+          return x;
+        }}
+        class="w-full"
+      />
+    {/snippet}
+  </ProductMetricCard>
+  
+  <!-- Category sales report -->
+  <CategorySalesReport title="Sales by category" subtitle="Desktop PC" changeProps={{ value: 2.5, since: 'Since last month', size: 'sm' }}>
+    {#snippet chart()}
+      <Chart {options} />
+    {/snippet}
+  </CategorySalesReport>
+  
+  <!-- Traffic by device -->
+  <Traffic {devices}>
+    {#snippet chart()}
+      <Chart options={trafficOptions(dark)} />
+    {/snippet}
+  </Traffic>
+  
+  <!-- Transactions table -->
   <Transactions {dark} />
 </div>

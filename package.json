@@ -129,14 +129,9 @@
     "./Change.svelte": {
       "types": "./dist/Change.svelte.d.ts",
       "svelte": "./dist/Change.svelte"
-    },
-    "./ChartWidget.svelte": {
+    },    "./ChartWidget.svelte": {
       "types": "./dist/ChartWidget.svelte.d.ts",
       "svelte": "./dist/ChartWidget.svelte"
-    },
-    "./ChatMsg.svelte": {
-      "types": "./dist/ChatMsg.svelte.d.ts",
-      "svelte": "./dist/ChatMsg.svelte"
     },
     "./ComparisonTable.svelte": {
       "types": "./dist/ComparisonTable.svelte.d.ts",
