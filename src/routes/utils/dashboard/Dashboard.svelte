@@ -9,6 +9,7 @@
   import type { DeviceOption } from '$lib/types';
   import Chat from './Chat.svelte';
   import Insights from './Insights.svelte';
+  import AthleticsTabList from './AthleticsTabList.svelte';
   import Transactions from './Transactions.svelte';
   import Customers from '../../data/users.json';
 
@@ -107,8 +108,13 @@
 </script>
 
 <div class="mt-px space-y-4">
+  <!-- Athletics Tabbed Component -->
+  <div class="w-full">
+    <AthleticsTabList />
+  </div>
+  
+  <!-- Original Dashboard Content -->
   <div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
-    <ChartWidget value={12.5} {chartOptions} title="$45,385" subtitle="Sales this week" />
     <Stats {products} {customers} {...statsCont}>
       {#snippet popoverDesc()}
         <P>Statistics is a branch of applied mathematics that involves the collection, description, analysis, and inference of conclusions from quantitative data.</P>
@@ -116,7 +122,9 @@
       {/snippet}
     </Stats>
   </div>
-  <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 2xl:grid-cols-3">
+
+  <div class="grid gap-4 xl:grid-cols-2 2xl:grid-cols-3">
+    <ChartWidget value={12.5} {chartOptions} title="$45,385" subtitle="Sales this week" />
     <ProductMetricCard title="New products" subTitle="2,340" changeProps={{ size: 'sm', value: 12.5, since: 'Since last month' }}>
       {#snippet chart()}
         <Chart options={thickbars} class="w-full" />
@@ -178,7 +186,12 @@
           </p>
           <Button color="alternative">Learn more<ArrowRightOutline class="ms-2" size="sm" /></Button>
         </TimelineItem>
-                <TimelineItem title="Marketing UI code in QuoVadis" date="March 2025">          <p class="text-base font-normal text-gray-500 dark:text-gray-300">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>          <a href="#top" class="text-primary-700 dark:text-primary-500 inline-flex items-center text-xs font-medium hover:underline sm:text-sm">            Go to QuoVadis Blocks<ArrowRightOutline class="ms-2" size="sm" />          </a>        </TimelineItem>
+        <TimelineItem title="Marketing UI code in QuoVadis" date="March 2025">
+          <p class="text-base font-normal text-gray-500 dark:text-gray-300">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
+          <a href="#top" class="text-primary-700 dark:text-primary-500 inline-flex items-center text-xs font-medium hover:underline sm:text-sm">
+            Go to QuoVadis Blocks<ArrowRightOutline class="ms-2" size="sm" />
+          </a>
+        </TimelineItem>
         <TimelineItem title="Marketing UI design in Figma" date="February 2025">
           <p class="text-base font-normal text-gray-500 dark:text-gray-300">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
         </TimelineItem>

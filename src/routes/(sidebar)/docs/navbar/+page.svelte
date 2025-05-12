@@ -24,18 +24,6 @@
 
   <CompoAttributesViewer fileName='AppsMenu' />
 
-  <Heading tag="h2" class="my-2 text-3xl">NotificationList</Heading>
-  <CodeWrapper class="my-8" innerClass="flex justify-center">
-    <div class="h-[540px]">
-    <ExampleComponents.NotificationList />
-    </div>
-    {#snippet codeblock()}
-      <HighlightCompo codeLang="ts" code={exampleModules['./examples/NotificationListEx.svelte'] as string} />
-    {/snippet}
-  </CodeWrapper>
-
-  <CompoAttributesViewer fileName='NotificationList' />
-
   <Heading tag="h2" class="my-2 text-3xl">UserMenu</Heading>
   <CodeWrapper class="my-8" innerClass="flex justify-center">
     <div class="h-64">
