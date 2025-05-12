@@ -7,24 +7,25 @@ interface MainChartColors {
   opacityTo: number;
 }
 
+/**
+ * Returns ApexChart options based on theme (dark/light)
+ * @param dark - Boolean indicating if dark theme is active
+ * @returns ApexOptions - Chart configuration options
+ */
 export default function getChartOptions(dark: boolean): ApexOptions {
-  let mainChartColors: MainChartColors;
-
-  if (dark) {
-    mainChartColors = {
-      borderColor: '#374151',
-      labelColor: '#9CA3AF',
-      opacityFrom: 0,
-      opacityTo: 0.15
-    };
-  } else {
-    mainChartColors = {
-      borderColor: '#F3F4F6',
-      labelColor: '#6B7280',
-      opacityFrom: 0.45,
-      opacityTo: 0
-    };
-  }
+  const mainChartColors: MainChartColors = dark 
+    ? {
+        borderColor: '#374151',
+        labelColor: '#9CA3AF',
+        opacityFrom: 0,
+        opacityTo: 0.15
+      }
+    : {
+        borderColor: '#F3F4F6',
+        labelColor: '#6B7280',
+        opacityFrom: 0.45,
+        opacityTo: 0
+      };
 
   const options: ApexOptions = {
     chart: {

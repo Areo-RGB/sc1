@@ -9,7 +9,13 @@
   }
   let { path, description, title, subtitle }: Props = $props();
 
-  let imgsrc = `https://open-graph-vercel.vercel.app/api/quovadis-svelte-admin-dashboard?title=${subtitle}`;  let og_url: string = `https://quovadis-svelte-admin-dashboard.vercel.app${path}`;
+  // Properly encode the subtitle parameter for the URL
+  const encodedSubtitle = encodeURIComponent(subtitle || '');
+  // Make sure path starts with / and remove any duplicate slashes
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  
+  let imgsrc = `https://open-graph-vercel.vercel.app/api/quovadis-svelte-admin-dashboard?title=${encodedSubtitle}`;
+  let og_url: string = `https://quovadis-svelte-admin-dashboard.vercel.app${normalizedPath}`;
 </script>
 
 <RunesMetaTags
