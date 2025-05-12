@@ -12,11 +12,19 @@
       // Check for theme preference in localStorage
       let theme = localStorage.getItem('theme');
       
-      // If no theme preference stored, default to light theme (no 'dark' class)
-      if (!theme || theme === 'light') {
-        document.documentElement.classList.remove('dark');
+      // Check if system theme should be used
+      if (theme === 'system' || !theme) {
+        // Use system preference
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDarkMode) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
       } else if (theme === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
       
       // Register service worker for PWA functionality

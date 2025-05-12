@@ -1,11 +1,21 @@
 /** @type {import('@sveltejs/kit').Handle} */
 export const handle = async ({ event, resolve }) => {
-  // Set light mode as default (remove 'dark' class from HTML element)
+  // Initialize theme based on preference or system default
   if (typeof document !== 'undefined') {
     const theme = localStorage.getItem('theme');
     
-    // Only set light theme as default when no theme preference is stored
-    if (!theme) {
+    // If system preference or no preference is set
+    if (theme === 'system' || !theme) {
+      // Use system preference
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
       document.documentElement.classList.remove('dark');
     }
   }
